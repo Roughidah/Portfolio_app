@@ -144,3 +144,13 @@ body.light-theme .theme-button {
  border: 1px solid #ccc;
 }
 
+
+.interest-item {
+ cursor: pointer;
+ margin-bottom: 10px;
+}
+
+.interest-item:hover {
+ font-weight: bold;
+}
+

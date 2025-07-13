@@ -31,7 +31,7 @@ const interests = [
     <h2>My interests (Click them!):</h2>
     <ul>
       <li v-for="interest in interests" :key="interest.name" @click="activeInterest = interest.gif"
-        style="cursor: pointer; margin-bottom: 10px;">
+        style="cursor: pointer; margin-bottom: 10px;" class="interest-item" >
         {{ interest.name }}
       </li>
     </ul>
