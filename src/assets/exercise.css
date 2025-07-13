@@ -49,11 +49,21 @@ nav a:hover {
   color: #666;
 }
 
+.boxlink.highlight-box:hover  {
+  background-color: #48ff00;
+  cursor: pointer;
+}
+
 .highlight-box {
   background: #e8f5e8;
   padding: 20px;
   border-radius: 5px;
   margin: 20px 0;
+}
+
+.highlight-box:hover {
+  background-color: #9df69d;
+  font-weight: bold;
 }
 
 /* Make the current page link look different */
@@ -62,7 +72,3 @@ nav a:hover {
   font-weight: bold;
 }
 
-.highlight-box:hover {
-  background-color: #48ff00;
-  cursor: pointer;
-}
