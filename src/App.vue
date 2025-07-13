@@ -86,7 +86,7 @@ nav a:hover {
 
 
 .highlight-box:hover {
-  background-color: #dff0d8;
+  background-color: #48ff00;
   cursor: pointer;
 }
 

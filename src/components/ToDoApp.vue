@@ -1,13 +1,30 @@
 <template>
     <div class="todo-app">
         <h1 class="app-title">{{ appTitle }}</h1>
+
+        
+<!-- Input for new todo -->
+     <div class="todo-input">
+        <input
+          v-model="newTodoText"
+          type="text" 
+          placeholder="Add a new todo" 
+          @keyup.enter="addTodo"
+        />
+        <button @click="addTodo" :disabled="!newTodoText.trim()">Add</button>
+      </div>
+
+ <!-- Todo list -->
+
         <ul class="todo-list">
-            <TodoItem
-                v-for="todo in todos"
-                :key="todo.id"
-                :todo="todo",
-                @remove="removeTodo"
-            />
+
+          <ToDoItem
+            v-for="todo in todos"
+            :key="todo.id"
+            :todo="todo"
+            @remove="removeTodo"
+          />
+
         </ul>
         <p v-if="todos.length === 0" class="empty-state">
             No todos yet, Awesome! 💃
@@ -25,6 +42,7 @@ export default{
     },
     data(){
         return {
+            newTodoText: "",
             todos: [
                 {id: 1, text: 'Learn HTML'},
                 {id: 2, text: 'Learn CSS'},
@@ -34,7 +52,7 @@ export default{
     },
     computed: {
         appTitle(){
-            return `My to dos (${this.todos,length})`
+            return `My to dos (${this.todos.length})`
         }
     },
     methods: {
@@ -43,7 +61,21 @@ export default{
             if (index !== -1){
                 this.todos.splice(index, 1)
             }
+        },
+        
+      addTodo() {
+        const text = this.newTodoText.trim();
+        if (text) {
+          const newTodo = {
+            id: Date.now(),
+            text,
+          };
+          this.todos.unshift(newTodo); // Add to top
+          this.newTodoText = ""; // Clear input
         }
+      }
+
+
     }
 }
 </script>
