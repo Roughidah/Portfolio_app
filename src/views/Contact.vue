@@ -1,24 +1,32 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue'; 
 
 // Reactive data using Vue 3 Composition API
 const name = ref('');
 const message = ref('');
 const sent = ref(false);
 
+
+// Computed property to check if form is valid
+const isFormValid = computed(() => {
+  return name.value.trim() !== '' && message.value.trim() !== '';
+});
+
+
 // Methods
 function sendMessage() {
-  // In a real website, this would send the message to a server
+  alert(`Hi ${name.value}, your message "${message.value}" is received`);
+
   console.log('Message from:', name.value, '- Message:', message.value);
   sent.value = true;
   name.value = '';
   message.value = '';
 
-  // Hide the success message after 3 seconds
   setTimeout(() => {
     sent.value = false;
   }, 3000);
 }
+
 </script>
 
 <template>
@@ -35,30 +43,22 @@ function sendMessage() {
     <form @submit.prevent="sendMessage">
       <p>
         <label>Your Name:</label><br />
-        <input
-          type="text"
-          v-model="name"
-          style="width: 100%; padding: 8px; margin-top: 5px"
-        />
+        <input type="text" v-model="name" style="width: 100%; padding: 8px; margin-top: 5px" placeholder="Type your name here.." />
       </p>
       <p>
         <label>Your Message:</label><br />
-        <textarea
-          v-model="message"
-          style="width: 100%; height: 100px; padding: 8px; margin-top: 5px"
-        >
+        <textarea v-model="message" style="width: 100%; height: 100px; padding: 8px; margin-top: 5px" placeholder="Type your message here..">
         </textarea>
       </p>
-      <button
-        type="submit"
-        style="
-          background: #4caf50;
-          color: white;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 5px;
-        "
-      >
+      <button type="submit" :disabled="!isFormValid" :style="{
+        background: '#4caf50',
+        color: 'white',
+        padding: '10px 20px',
+        border: 'none',
+        borderRadius: '5px',
+        opacity: isFormValid ? 1 : 0.6,
+        cursor: isFormValid ? 'pointer' : 'not-allowed'
+      }">
         Send Message
       </button>
     </form>
