@@ -121,6 +121,15 @@ body.dark-theme .content p {
  color: #cccccc;
 }
 
+body.dark-theme  h1 {
+ color: #ffffff;
+ border-bottom: 2px solid #90ee90;
+}
+
+body.dark-theme  p {
+ color: #cccccc;
+}
+
 
 body.dark-theme .highlight-box {
  background-color: #2a2a2a;
@@ -153,4 +162,6 @@ body.light-theme .theme-button {
 .interest-item:hover {
  font-weight: bold;
 }
+
+
 

@@ -186,4 +186,18 @@ export default{
       text-align: center;
       color: #6c757d;
     }
+
+
+body.dark-theme p,
+body.dark-theme li,
+body.dark-theme input,
+body.dark-theme label
+ {
+ color: black;
+}
+
+body.dark-theme .app-title{
+  color: black;
+}
+
 </style>
