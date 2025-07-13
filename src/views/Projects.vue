@@ -16,8 +16,10 @@
     </div>
 
     <div class="highlight-box">
+      <router-link to="/todo" class="highlight-box" style="display: block; text-decoration: none; color: inherit;">
       <h3>📝 Todo List App</h3>
       <p>A simple app to keep track of tasks (coming soon!).</p>
+      </router-link>
     </div>
 
     <div class="highlight-box">

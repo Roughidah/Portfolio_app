@@ -5,6 +5,9 @@ import Projects from '../views/Projects.vue'
 import Contact from '../views/Contact.vue'
 import NotFound from '../views/NotFound.vue'
 
+import TodoPage from '../views/ToDoPage.vue'
+
+
 
 const routes = [
     {path: '/', component: Home},
@@ -12,6 +15,7 @@ const routes = [
     {path: '/projects', component: Projects},
     {path: '/contact', component: Contact},
     {path: '/:pathMatch(.*)*', component: NotFound },
+    { path: '/todo', component: TodoPage },
 
 ]
 

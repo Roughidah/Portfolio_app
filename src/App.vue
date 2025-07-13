@@ -83,4 +83,11 @@ nav a:hover {
   color: red;
   font-weight: bold;
 }
+
+
+.highlight-box:hover {
+  background-color: #dff0d8;
+  cursor: pointer;
+}
+
 </style>
